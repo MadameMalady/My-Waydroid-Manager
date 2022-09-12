@@ -1,4 +1,5 @@
-# Manjaro Waydroid Manager        [Project Not in active development, feel free to improve, MWM is open-source.] 
+# Manjaro Waydroid Manager        
+[Project Not in active development, feel free to improve, MWM is open-source.] 
 # (  Compatible with Pinephone Pro / Manjaro Phosh Arm  )
 Manjaro Waydroid Manager is a CLI program for installing and managing Waydroid on Manjaro Arm on the Pinephone Pro.
 
