@@ -1,5 +1,5 @@
 # My Waydroid Manager    
-# REPOSITORY UNDER MAINTAINENCE, WAIT TO DOWNLOAD TO AVOID ERRORS 09/22/22
+# REPOSITORY UNDER MAINTAINENCE, WAIT TO DOWNLOAD TO AVOID ERRORS 09/22/22 1:36 EST
 # ( Compatible with Pinephone Pro / Phosh-based distributions )
 My Waydroid Manager is a CLI program for installing and managing Waydroid on Manjaro Arm on the Pinephone Pro.
 
