@@ -17,3 +17,7 @@ git clone this repository
 mark the script in 'scripts' and the .py program as executable, open the .py programs directory in terminal, run, enjoy!
 or, you can download from the 'releases' page, extract the archive, and follow the same steps.
 
+
+reqs:
+
+You must have libadwaita, and gtk4 installed.
