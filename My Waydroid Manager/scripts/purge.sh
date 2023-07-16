@@ -1,8 +1,13 @@
 #!/bin/bash
 
 if [ $(hostname) = 'mobian' ]; then
-  # to be filled
+   echo "to be filled"
+elif [ $(hostname) = 'ubuntu' ]; then
+   echo "to be filled"
 elif [ $(hostname) = 'manjaro' ]; then
-  # to be filled
-elif [ $(hostname) = 'postmarketos' ]; then
-  # to be filled
+   echo "to be filled"
+elif [ $(hostname) = 'postmarketos*' ]; then
+   echo "to be filled" 
+else
+   echo "Error 404"
+fi
