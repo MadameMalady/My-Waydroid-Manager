@@ -16,7 +16,7 @@ General Guidelines:
 Things to be fixed, Finished, or implimented:
 
 
-  - A proper 'Back' Button
+  - A correct 'Back' Button that destroys the currently open window while opening the previous
 
   - A proper 'About' Button
 
