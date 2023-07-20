@@ -4,7 +4,7 @@ My Waydroid Manager a work-in-progress application written in Python and Bash, u
 
 My Waydroid Manager is a WORK IN PROGRESS and comes with absolutely no gurantee of being compatible with your use-case.
 
-My Waydroid Manager should work to build from source / install Waydroid on the following platforms (with Gnome or Phosh DE):
+My Waydroid Manager should work to install Waydroid on the following platforms (with Gnome or Phosh DE):
 
 Mobian 
 Debian
