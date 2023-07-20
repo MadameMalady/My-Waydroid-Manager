@@ -1,4 +1,4 @@
-This is a file to outlines a general improvements list for My Waydroid Manager;
+This is a file that outlines a general improvements list for My Waydroid Manager;
 Contributions working on the following is welcome!
 
 
