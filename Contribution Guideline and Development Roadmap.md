@@ -9,6 +9,8 @@ General Guidelines:
   - Improvements that expand the covered distributions / Desktop Enviroments are welcome, if you have hardware
     to test your proposed improvements on (f/oss devs aren't rich).
   - Any system functions need to be defined in their own bash script in /scripts
+    ** I would like to eventually consolidate everything into subprocess.run commands
+       once I know enough to do so, and ditch the scripts entirely.
   - All GUI components need to be made with Gtk4, Libadwaita, and Python.
   - I am not a senior developer, please do not assume that I know everything.
   
@@ -18,13 +20,14 @@ Things to be fixed, Finished, or implimented:
 
   - A correct 'Back' Button that destroys the currently open window while opening the previous
 
-  - A proper 'About' Button
+  - A better 'About' Button using Adw.AboutWindow
+    ** Help with this is appreciated!
 
   - Replace $hostname as the method of distribution identification with something more robust
 
-  - Test Manjaro
+  - Add support for, and test Manjaro
 
-  - Test Postmarket OS (eventually)
+  - Add support for and test Postmarket OS (eventually)
 
   - Add support for more distributions and desktop enviroments
 
