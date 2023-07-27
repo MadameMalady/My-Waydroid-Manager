@@ -3,11 +3,11 @@
 if [ $(hostname) = 'mobian' ]; then
    notify-send "My Waydroid Manager" "Check Your Terminal"
    sudo apt install libnotify-bin
-   exit
+   notify-send "My Waydroid Manager" "Done!"
 elif [ $(hostname) = 'ubuntu' ]; then
    notify-send "My Waydroid Manager" "Check Your Terminal"
    sudo apt install libnotify-bin
-   exit
+   notify-send "My Waydroid Manager" "Done!"
 elif [ $(hostname) = 'manjaro' ]; then
    sudo pacman -Sy libnotify
 elif [ $(hostname) = 'postmarketos*' ]; then
@@ -15,5 +15,4 @@ elif [ $(hostname) = 'postmarketos*' ]; then
 else
    echo "Error 404"
    sleep 3
-   exit
 fi
