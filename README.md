@@ -13,11 +13,36 @@ Ubuntu
 
 How to download and use:
 
-git clone this repository
-mark the script in 'scripts' and the .py program as executable, open the .py programs directory in terminal, run, enjoy!
-or, you can download from the 'releases' page, extract the archive, and follow the same steps.
+**With Git Clone**:
 
+    git clone https://github.com/MadameMalady/My-Waydroid-Manager
 
-reqs:
+    cd My-Waydroid-Manager/MyWaydroidManager
 
-You must have libadwaita, and gtk4 installed.
+    sudo chmod +x My_Waydroid_Manager.py
+
+    cd scripts
+
+    sudo chmod +x build.sh dependencies.sh install_application.sh purge.sh purge_images.sh
+
+    cd ..
+
+    ./My_Waydroid_Manager.py
+
+run First-time Setup
+
+run Install Dependencies
+
+run Install Application
+
+close
+
+You may now run the application from the app menu
+
+**From the 'Releases' tab**:
+
+Download the latest release
+
+Extract the archive
+
+Follow the above directions from after the 'git clone' command.
