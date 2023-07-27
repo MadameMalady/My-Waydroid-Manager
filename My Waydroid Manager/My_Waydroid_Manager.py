@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python3                                                                            
 
-# v 0.1.8
+# v 0.1.9
 # © 2023 GPL 3.0
 
 
-
-# developer note, 'About' function under contruction
+import subprocess
 import sys
 import gi
 import os
@@ -14,6 +13,8 @@ gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, Gio, GLib
 
   # Main Application Window:
+  
+
         
 class MainWindow(Gtk.ApplicationWindow):
     def __init__(self, *args, **kwargs):
@@ -22,6 +23,31 @@ class MainWindow(Gtk.ApplicationWindow):
         self.header = Gtk.HeaderBar()
         self.set_titlebar(self.header)
         
+        #set app name w/ GLib
+        GLib.set_application_name("My Waydroid Manager")
+
+        # Create a new "Action"
+        action = Gio.SimpleAction.new("about", None)
+        action.connect("activate", self.show_about)
+        self.add_action(action)
+
+        # 'About' action menu
+        menu = Gio.Menu.new()
+        menu.append("About", "win.about")  
+
+        # Create a popover
+        self.popover = Gtk.PopoverMenu()
+        self.popover.set_menu_model(menu)
+
+        # Create a menu button
+        self.hamburger = Gtk.MenuButton()
+        self.hamburger.set_popover(self.popover)
+        self.hamburger.set_icon_name("open-menu-symbolic")
+
+        # Add menu button to the header bar
+        self.header.pack_end(self.hamburger)
+ 
+         
   # Main Application window size:      
         
         self.set_default_size(360, 720)
@@ -42,7 +68,7 @@ class MainWindow(Gtk.ApplicationWindow):
         
   # Button 1, button size:
         
-        self.button1.set_margin_top(220)
+        self.button1.set_margin_top(250)
         self.button1.set_margin_bottom(20)
         self.button1.set_margin_start(10)
         self.button1.set_margin_end(10)
@@ -68,37 +94,6 @@ class MainWindow(Gtk.ApplicationWindow):
         
         self.button2.connect('clicked', self.Manage_Install)
         
-  # Button 4 Label= 'Help!'
-        
-        self.button4 = Gtk.Button(label="Help!")
-        self.box1.append(self.button4)
-        
-  # Button 4, button size:
-        
-        self.button4.set_margin_top(10)
-        self.button4.set_margin_bottom(20)
-        self.button4.set_margin_start(10)
-        self.button4.set_margin_end(10)
-        
-  # Button 4, Function, ' Help ':       
-        
-        self.button4.connect('clicked', self.Help)
-        
-  # Button 5 Label= 'About'
-        
-        self.button5 = Gtk.Button(label="About")
-        self.box1.append(self.button5)
-        
-  # Button 5, button size:
-        
-        self.button5.set_margin_top(10)
-        self.button5.set_margin_bottom(20)
-        self.button5.set_margin_start(10)
-        self.button5.set_margin_end(10)
-        
-  # Button 5, Function, ' About ':               
-        
-        self.button5.connect('clicked', self.About)
         
   # Main Application Window's Button's Definitions:
         
@@ -144,7 +139,7 @@ class MainWindow(Gtk.ApplicationWindow):
             
     # Button 6, button size:
             
-            self.button6.set_margin_top(300)
+            self.button6.set_margin_top(250)
             self.button6.set_margin_bottom(20)
             self.button6.set_margin_start(10)
             self.button6.set_margin_end(10)
@@ -152,6 +147,27 @@ class MainWindow(Gtk.ApplicationWindow):
     # Button 6, Function, ' Install_Dependencies ':       
             
             self.button6.connect('clicked', self.Install_Dependencies)
+            
+            
+    # Button 11 Label= 'Install Application':
+            
+            self.button11 = Gtk.Button(label="Install Application")
+            self.box2.append(self.button11)
+            
+    # Button 11, button size:
+            
+            self.button11.set_margin_top(10)
+            self.button11.set_margin_bottom(20)
+            self.button11.set_margin_start(10)
+            self.button11.set_margin_end(10)
+            
+    # Button 11, Function, ' Install_Application ':       
+            
+            self.button11.connect('clicked', self.Install_Application)
+            
+            
+            
+            
             
   # Install Waydroid Window's Button's Definitions:
         
@@ -194,7 +210,7 @@ class MainWindow(Gtk.ApplicationWindow):
             
     # Button 7, button size:
             
-            self.button7.set_margin_top(200)
+            self.button7.set_margin_top(250)
             self.button7.set_margin_bottom(20)
             self.button7.set_margin_start(10)
             self.button7.set_margin_end(10)
@@ -240,90 +256,61 @@ class MainWindow(Gtk.ApplicationWindow):
            
     # This is where we will define what each button Does, and connect a function to each of them.
     
+    # main application window, popover menu, about window
+    def show_about(self, action, param):
+       
+        self.about = Gtk.AboutDialog()
+        self.about.set_transient_for(self)
+        self.about.set_modal(self)
+
+        self.about.set_authors(["Kharra Oswin"])
+        self.about.set_copyright("© 2023 Kharra Oswin")
+        self.about.set_license_type(Gtk.License.GPL_3_0)
+        self.about.set_website("https://github.com/MadameMalady/My-Waydroid-Manager")
+        self.about.set_website_label("Github")
+        self.about.set_version("0.1.9")
+        self.about.set_logo_icon_name("app.Keo.MyWaydroidManager")  
+
+        self.about.set_visible(True)
         
     #Button 3  
     def Advanced_Options(self, button):
         print("here's some more text, developer.")
-      
-    #Button 4    
-    def Help(self, button):
-        print("helpful text!")
     
-    #Button 5
-    def About(self, button):
-        print("Informative texty stuffs")
-        
-        
-        class About_Window(Gtk.ApplicationWindow):
-        
-            self.header = Gtk.HeaderBar()
-            self.set_titlebar(self.header)
-            
-            
-            # Header Bar, left side, back button
-            
-            self.Back_Button = Gtk.Button(label="Back")
-            self.header.pack_start(self.Back_Button)
-            self.Back_Button.set_icon_name("go-previous-symbolic")
-            
-            
-            # Left side of header bar, 'Back_Button' function:
-            
-            self.Back_Button.connect('clicked', self.Go_Back)
-    
-            self.set_default_size(360, 720)
-            self.set_title("My Waydroid Manager")
-            
-            # Fourth Box, About Window
-        
-            self.box4 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-            self.set_child(self.box4)
-            
-            
-            
-    # Button 10 Label= 'About':
-        
-            self.button10 = Gtk.Button(label="My Waydroid Manager GPL 3.0 ©2023" "made with caffine by Kharra Oswin")
-            self.box4.append(self.button10)
-            
-    # Button 10, button size:
-            
-            self.button10.set_margin_top(300)
-            self.button10.set_margin_bottom(20)
-            self.button10.set_margin_start(10)
-            self.button10.set_margin_end(10)
-            
-    # Button 10, Function, ' Purge_Waydroid_Installation ':       
-            
-            self.button10.connect('clicked', self.About)
-        
     #Button 6
     def Install_Dependencies(self, button):
         # install dependencies for Waydroid
         print("Installing Dependencies, please wait...")
-        os.system("cd scripts && ./dependencies.sh")
+        #os.system("cd scripts && ./dependencies.sh")
+        print(subprocess.run(["~/MyWaydroidManager/scripts", "dependencies.sh"]))
+        
+        
+        
+    def Install_Application(self,button):
+        # install files locally as an application
+        print("This will install all the required files locally, in the future you may launch from the app's icon")
+        os.system("cd scripts && ./install_application.sh")
             
     #Button 7
     def Purge_Waydroid_Installation(self, button):
         # Purge Waydroid Installation
         print("This will completely remove waydroid")
-        os.system("cd scripts && ./purge.sh")  
+        os.system("cd ~/MyWaydroidManager/scripts && ./purge.sh")  
       
     #Button 9
     def Purge_Waydroid_Images(self, button):
         # Purge Waydroid Images
         print("This will delete all waydroid images and directories")
-        os.system("cd scripts && ./purge_images.sh")  
+        os.system("cd ~/MyWaydroidManager/scripts && ./purge_images.sh")  
         
     #Button 9
     def Install_Waydroid(self, button):
         # run 'build.sh' to try and build or install waydroid
         print("Installing Waydroid, please wait..")
-        os.system("cd scripts && ./build.sh")
+        os.system("cd ~/MyWaydroidManager/scripts && ./build.sh")
         
 # This tells the app how to open Various Windows, And close them.
     
-# This is where the 'Back' button needs to be defined:
     def on_activate(self, app):
         self.win = FirstTimeSetupWindow(application=app)
         self.win.present()
