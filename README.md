@@ -9,7 +9,7 @@ My Waydroid Manager should work to install Waydroid on the following platforms (
 Mobian 
 Debian
 Ubuntu
-Manjaro
+(**Manjaro** is a work in progress, and isn't fully implemented)
 
 How to download and use:
 
