@@ -254,13 +254,8 @@ class MainWindow(Gtk.ApplicationWindow):
             self.button9.set_margin_start(10)
             self.button9.set_margin_end(10)
             self.button9.connect('clicked', self.Install_Waydroid)
-            
-            
-#-----------------------------------------------------------------------------------------------------
-           
-    # This is where we will define what each button Does, and connect a function to each of them.
-    
-    # main application window, popover menu, about window
+
+     # main application window, popover menu, about window
     def show_about(self, action, param):
        
         self.about = Gtk.AboutDialog()
@@ -275,8 +270,12 @@ class MainWindow(Gtk.ApplicationWindow):
         self.about.set_version("0.1.9")
         self.about.set_logo_icon_name("app.Keo.MyWaydroidManager")  
 
-        self.about.set_visible(True)
-        
+        self.about.set_visible(True)       
+            
+#-----------------------------------------------------------------------------------------------------
+           
+    # This is where we will define what each button Does, and connect a function to each of them.
+    
     #Button 3  
     def Advanced_Options(self, button):
         print("here's some more text, developer.")
@@ -286,33 +285,40 @@ class MainWindow(Gtk.ApplicationWindow):
         # install dependencies for Waydroid
         print("Installing Dependencies, please wait...")
         #os.system("cd scripts && ./dependencies.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")]))
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")], check=True))
         
         
         
     def Install_Application(self,button):
         # install files locally as an application
         print("This will install all the required files locally, in the future you may launch from the app's icon")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
+        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "install_application.sh")], check=True))
             
     #Button 7
     def Purge_Waydroid_Installation(self, button):
         # Purge Waydroid Installation
         print("This will completely remove waydroid")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")  
+        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge.sh")], check=True))
       
     #Button 9
     def Purge_Waydroid_Images(self, button):
         # Purge Waydroid Images
         print("This will delete all waydroid images and directories")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")  
+        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge_images.sh")], check=True))
         
     #Button 9
     def Install_Waydroid(self, button):
         # run 'build.sh' to try and build or install waydroid
         print("Installing Waydroid, please wait..")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
+        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "build.sh")], check=True))
         
+
+#-----------------------------------------------------------------------------------------------------
+
 # This tells the app how to open Various Windows, And close them.
     
     def on_activate(self, app):
