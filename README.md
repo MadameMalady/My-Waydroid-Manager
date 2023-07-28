@@ -17,7 +17,7 @@ How to download and use:
 
     git clone https://github.com/MadameMalady/My-Waydroid-Manager
 
-    cd My-Waydroid-Manager/MyWaydroidManager
+    cd 'My Waydroid Manager'/MyWaydroidManager
 
     sudo chmod +x My_Waydroid_Manager.py
 
