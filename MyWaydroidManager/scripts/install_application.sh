@@ -12,9 +12,9 @@ if [ $(hostname) = 'mobian' ]; then
    cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
    cp -r icons /home/$user/MyWaydroidManager
    cd icons
-   cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
+   sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
    cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
-   cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
+   sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
    cd ..
    cp -r scripts /home/$user/MyWaydroidManager
    cd  ~/.local/share/applications 
@@ -40,9 +40,9 @@ elif [ $(hostname) = 'ubuntu' ]; then
    cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
    cp -r icons /home/$user/MyWaydroidManager
    cd icons
-   cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
+   sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
    cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
-   cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
+   sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
    cd ..
    cp -r scripts /home/$user/MyWaydroidManager
    cd  ~/.local/share/applications 
