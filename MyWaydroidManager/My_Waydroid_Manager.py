@@ -286,7 +286,7 @@ class MainWindow(Gtk.ApplicationWindow):
         # install dependencies for Waydroid
         print("Installing Dependencies, please wait...")
         #os.system("cd scripts && ./dependencies.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts'), "dependencies.sh"]))
+        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")]))
         
         
         
