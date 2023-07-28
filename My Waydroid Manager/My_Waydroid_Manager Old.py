@@ -17,10 +17,6 @@ from gi.repository import Gtk, Adw, Gio, GLib
 
         
 class MainWindow(Gtk.ApplicationWindow):
-    # Declare current_dir as a class attribute
-    current_dir = os.getcwd()
-
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
@@ -286,32 +282,32 @@ class MainWindow(Gtk.ApplicationWindow):
         # install dependencies for Waydroid
         print("Installing Dependencies, please wait...")
         #os.system("cd scripts && ./dependencies.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts'), "dependencies.sh"]))
+        print(subprocess.run(["~/MyWaydroidManager/scripts", "dependencies.sh"]))
         
         
         
     def Install_Application(self,button):
         # install files locally as an application
         print("This will install all the required files locally, in the future you may launch from the app's icon")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
+        os.system("cd scripts && ./install_application.sh")
             
     #Button 7
     def Purge_Waydroid_Installation(self, button):
         # Purge Waydroid Installation
         print("This will completely remove waydroid")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")  
+        os.system("cd ~/MyWaydroidManager/scripts && ./purge.sh")  
       
     #Button 9
     def Purge_Waydroid_Images(self, button):
         # Purge Waydroid Images
         print("This will delete all waydroid images and directories")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")  
+        os.system("cd ~/MyWaydroidManager/scripts && ./purge_images.sh")  
         
     #Button 9
     def Install_Waydroid(self, button):
         # run 'build.sh' to try and build or install waydroid
         print("Installing Waydroid, please wait..")
-        os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
+        os.system("cd ~/MyWaydroidManager/scripts && ./build.sh")
         
 # This tells the app how to open Various Windows, And close them.
     
