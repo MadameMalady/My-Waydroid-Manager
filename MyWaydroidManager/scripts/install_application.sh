@@ -7,7 +7,6 @@ if [ $(hostname) = 'mobian' ]; then
    notify-send "My Waydroid Manager" "Check Your Terminal"
    
    # copy application directory
-   cd ..
    mkdir -p /home/$user/MyWaydroidManager
    cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
    cp -r icons /home/$user/MyWaydroidManager
@@ -35,7 +34,6 @@ elif [ $(hostname) = 'ubuntu' ]; then
    notify-send "My Waydroid Manager" "Check Your Terminal"
    
    # copy application directory
-      cd ..
    mkdir -p /home/$user/MyWaydroidManager
    cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
    cp -r icons /home/$user/MyWaydroidManager
