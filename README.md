@@ -11,11 +11,14 @@ Debian
 Ubuntu
 (**Manjaro** is a work in progress, and isn't fully implemented)
 
-**Do Not Ship**
+**Please Do Not Ship**
 
   Flatpak builds are planned for release when the application is more feature-complete. 
-  Official builds will be published by myself when ready,
-  for other packaging formats, please open an 'Idea' in the Discussions tab.
+  Official Flatpak builds will be published by myself when ready,
+  for other packaging formats, please open an 'Idea' in the Discussions tab!
+  I am only interested in Maintaining the Flatpak build long-tern, so if you'd like to volenteer
+  to maintain other packaging formats, please do so when the Flatpak is shipped! 
+  (ie: when the main functions are all complete)!
 
 Currently the 'Retrieve Registration Code' option isn't fully finished, please be patient as it's worked on.
 
