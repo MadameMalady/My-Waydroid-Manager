@@ -272,7 +272,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         self.about.set_visible(True)       
             
-#-----------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------
            
     # This is where we will define what each button Does, and connect a function to each of them.
     
@@ -282,42 +282,206 @@ class MainWindow(Gtk.ApplicationWindow):
     
     #Button 6
     def Install_Dependencies(self, button):
-        # install dependencies for Waydroid
+        # Multiline bash code
+        dependencies_bash = """
+        if [ $(hostname) = 'mobian' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo apt install libnotify-bin
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'ubuntu' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo apt install libnotify-bin
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'manjaro' ]; then
+                sudo pacman -Sy libnotify
+        elif [ $(hostname) = 'postmarketos*' ]; then
+                echo "to be filled" 
+        else
+                echo "Error 404"
+                sleep 3
+        fi      
+        """
         print("Installing Dependencies, please wait...")
-        #os.system("cd scripts && ./dependencies.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")], check=True))
+        subprocess.run(["bash", "-c", dependencies_bash], check=True)
+        
+        ## install dependencies for Waydroid
+        #print("Installing Dependencies, please wait...")
+        ##os.system("cd scripts && ./dependencies.sh")
+        #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")], check=True))
         
         
         
     def Install_Application(self,button):
-        # install files locally as an application
-        print("This will install all the required files locally, in the future you may launch from the app's icon")
-        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "install_application.sh")], check=True))
+        # Multiline bash code
+        install_application_bash = """
+        user="$(whoami)"
+
+        if [ $(hostname) = 'mobian' ]; then
+                
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                
+                # copy application directory
+                mkdir -p /home/$user/MyWaydroidManager
+                cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
+                cp -r icons /home/$user/MyWaydroidManager
+                cd icons
+                sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
+                cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
+                sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
+                cd ..
+                cp -r scripts /home/$user/MyWaydroidManager
+                cd  ~/.local/share/applications 
+                touch MyWaydroidManager.desktop
+                echo "
+        [Desktop Entry]
+        Version=0.1.9
+        Name=My Waydroid Manager
+        Comment=Manage Waydroid installations easily
+        Exec=/usr/bin/env python3 /home/$user/MyWaydroidManager/My_Waydroid_Manager.py
+        Icon=/home/$user/MyWaydroidManager/icons/app.Keo.MyWaydroidManager.svg
+        X-Purism-FormFactor=Workstation;Mobile;
+        Terminal=true
+        Type=Application">MyWaydroidManager.desktop
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'ubuntu' ]; then
+                
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                
+                # copy application directory
+                mkdir -p /home/$user/MyWaydroidManager
+                cp My_Waydroid_Manager.py /home/$user/MyWaydroidManager
+                cp -r icons /home/$user/MyWaydroidManager
+                cd icons
+                sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons/hicolor/scalable/apps
+                cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
+                sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
+                cd ..
+                cp -r scripts /home/$user/MyWaydroidManager
+                cd  ~/.local/share/applications 
+                touch MyWaydroidManager.desktop
+                echo "
+        [Desktop Entry]
+        Version=0.1.9
+        Name=My Waydroid Manager
+        Comment=Manage Waydroid installations easily
+        Exec=/usr/bin/env python3 /home/$user/MyWaydroidManager/My_Waydroid_Manager.py
+        Icon=/home/$user/MyWaydroidManager/icons/app.Keo.MyWaydroidManager.svg
+        X-Purism-FormFactor=Workstation;Mobile;
+        Terminal=true
+        Type=Application">MyWaydroidManager.desktop
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'manjaro' ]; then
+                echo "to be filled"
+        elif [ $(hostname) = 'postmarketos*' ]; then
+                echo "to be filled" 
+        else
+                echo "Error 404"
+                sleep 3
+        fi      
+        """
+        print("Installing Dependencies, please wait...")
+        subprocess.run(["bash", "-c", install_application_bash], check=True)
+        ## install files locally as an application
+        #print("This will install all the required files locally, in the future you may launch from the app's icon")
+        ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
+        #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "install_application.sh")], check=True))
             
     #Button 7
     def Purge_Waydroid_Installation(self, button):
-        # Purge Waydroid Installation
-        print("This will completely remove waydroid")
-        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge.sh")], check=True))
+        # Multiline bash code
+        purge_bash = """
+        if [ $(hostname) = 'mobian' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                waydroid session stop
+                sudo waydroid container stop
+                sudo apt remove waydroid -y
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'ubuntu' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                waydroid session stop
+                sudo waydroid container stop
+                sudo apt remove waydroid -y
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'manjaro' ]; then
+                echo "to be filled"
+        elif [ $(hostname) = 'postmarketos*' ]; then
+                echo "to be filled" 
+        else
+                echo "Error 404"
+                sleep 3
+        fi      
+        """
+        print("Installing Dependencies, please wait...")
+        subprocess.run(["bash", "-c", purge_bash], check=True)
+        ## Purge Waydroid Installation
+        #print("This will completely remove waydroid")
+        ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")
+        #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge.sh")], check=True))
       
     #Button 9
     def Purge_Waydroid_Images(self, button):
-        # Purge Waydroid Images
-        print("This will delete all waydroid images and directories")
-        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge_images.sh")], check=True))
+        # Multiline bash code
+        purge_images_bash = """
+        if [ $(hostname) = 'mobian' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'ubuntu' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'manjaro' ]; then
+                echo "to be filled"
+        elif [ $(hostname) = 'postmarketos*' ]; then
+                echo "to be filled" 
+        else
+                echo "Error 404"
+                sleep 3
+        fi      
+        """
+        print("Installing Dependencies, please wait...")
+        subprocess.run(["bash", "-c", purge_images_bash], check=True)
+        ## Purge Waydroid Images
+        #print("This will delete all waydroid images and directories")
+        ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")
+        #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge_images.sh")], check=True))
         
     #Button 9
     def Install_Waydroid(self, button):
-        # run 'build.sh' to try and build or install waydroid
-        print("Installing Waydroid, please wait..")
-        #os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
-        print(subprocess.run([os.path.join(self.current_dir, 'scripts', "build.sh")], check=True))
+        # Multiline bash code
+        build_bash = """
+        if [ $(hostname) = 'mobian' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo apt install curl ca-certificates -y
+                curl https://repo.waydro.id | sudo bash
+                sudo apt install waydroid -y
+                notify-send "My Waydroid Manager" "Launch Waydroid from it's application icon, minimize osk"
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'ubuntu' ]; then
+                notify-send "My Waydroid Manager" "Check Your Terminal"
+                sudo apt install curl ca-certificates -y
+                curl https://repo.waydro.id | sudo bash
+                sudo apt install waydroid -y
+                notify-send "My Waydroid Manager" "Launch Waydroid from it's application icon, minimize osk"
+                notify-send "My Waydroid Manager" "Done!"
+        elif [ $(hostname) = 'manjaro' ]; then
+                sudo pacman -Syyu waydroid
+                waydroid
+        elif [ $(hostname) = 'postmarketos*' ]; then
+                echo "Sorry, this option's still a work in progress"
+        else
+                echo "Error 404"
+        fi      
+        """
+        print("Installing Dependencies, please wait...")
+        subprocess.run(["bash", "-c", build_bash], check=True)
+        ## run 'build.sh' to try and build or install waydroid
+        #print("Installing Waydroid, please wait..")
+        ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
+        #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "build.sh")], check=True))
         
 
-#-----------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------------
 
 # This tells the app how to open Various Windows, And close them.
     
