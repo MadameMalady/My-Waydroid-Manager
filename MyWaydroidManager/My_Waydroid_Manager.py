@@ -349,6 +349,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
+                echo "
         [Desktop Entry]
         Version=0.1.9
         Name=My Waydroid Manager
@@ -376,6 +377,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
+                echo "
         [Desktop Entry]
         Version=0.1.9
         Name=My Waydroid Manager
