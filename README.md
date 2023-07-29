@@ -11,6 +11,8 @@ Debian
 Ubuntu
 (**Manjaro** is a work in progress, and isn't fully implemented)
 
+Currently the 'Retrieve Registration Code' option isn't fully finished, please be patient as it's worked on.
+
 How to download and use:
 
 **With Git Clone**:

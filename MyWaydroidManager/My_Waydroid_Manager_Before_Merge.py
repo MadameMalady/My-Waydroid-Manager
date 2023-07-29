@@ -1,6 +1,6 @@
 #!/usr/bin/env python3                                                                            
 
-# v 0.2.0
+# v 0.1.9
 # © 2023 GPL 3.0
 
 
@@ -8,8 +8,6 @@ import subprocess
 import sys
 import gi
 import os
-#import contextlib
-#import io
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, Gio, GLib
@@ -19,6 +17,10 @@ from gi.repository import Gtk, Adw, Gio, GLib
 
         
 class MainWindow(Gtk.ApplicationWindow):
+    # Declare current_dir as a class attribute
+    current_dir = os.getcwd()
+
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
@@ -50,62 +52,60 @@ class MainWindow(Gtk.ApplicationWindow):
         self.header.pack_end(self.hamburger)
  
          
-        # Main Application window size:      
+  # Main Application window size:      
         
         self.set_default_size(360, 720)
         
-        # Main Application window Title:        
+  # Main Application window Title:        
         
         self.set_title("My Waydroid Manager")
         
-        # Main Application window, Box 1:
+  # Main Application window, Box 1:
         
         self.box1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.set_child(self.box1)
         
-        # Button 1 Label= 'First Time Setup':
+  # Button 1 Label= 'First Time Setup':
        
         self.button1 = Gtk.Button(label="First-time Setup")
         self.box1.append(self.button1)
         
-        # Button 1, button size:
+  # Button 1, button size:
         
         self.button1.set_margin_top(250)
         self.button1.set_margin_bottom(20)
         self.button1.set_margin_start(10)
         self.button1.set_margin_end(10)
         
-        # Button 1, Function, ' First_Time_Setup ':       
+  # Button 1, Function, ' First_Time_Setup ':       
         
         self.button1.connect('clicked', self.First_Time_Setup)
 
         
-        # Button 2 Label= 'Manage Install'
+  # Button 2 Label= 'Manage Install'
         
         self.button2 = Gtk.Button(label="Manage Install")
         self.box1.append(self.button2)
         
-        # Button 2, button size:
+  # Button 2, button size:
         
         self.button2.set_margin_top(10)
         self.button2.set_margin_bottom(20)
         self.button2.set_margin_start(10)
         self.button2.set_margin_end(10)
         
-        # Button 2, Function, ' First_Time_Setup ':       
+  # Button 2, Function, ' First_Time_Setup ':       
         
         self.button2.connect('clicked', self.Manage_Install)
         
         
-    # Main Application Window's Button's Definitions:
+  # Main Application Window's Button's Definitions:
         
-    # Button 1, Main Application Window, Function = Open a new window.
-    
-    # Button 1 def:
+  # Button 1, Main Application Window, Function = Open a new window.
         
     def First_Time_Setup(self, button):
 
-        # First Time Setup Window:
+    # First Time Setup Window:
     
         class FirstTimeSetupWindow(Gtk.ApplicationWindow):
         
@@ -113,66 +113,69 @@ class MainWindow(Gtk.ApplicationWindow):
             self.set_titlebar(self.header)
             
             
-            # Header Bar, left side, back button
+    # Header Bar, left side, back button
             
             self.Back_Button = Gtk.Button(label="Back")
             self.header.pack_start(self.Back_Button)
             self.Back_Button.set_icon_name("go-previous-symbolic")
             
-            # Left side of header bar, 'Back_Button' function:
-             
+    # Left side of header bar, 'Back_Button' function:
+            
             self.Back_Button.connect('clicked', self.Go_Back)
             
-            # First Time Setup window size:      
+    # First Time Setup window size:      
     
             self.set_default_size(360, 720)
             
-            # First Time Setup window Title:
+    # First Time Setup window Title:
             
             self.set_title("My Waydroid Manager")
             
-            # First Time Setup window, Box 2:
+    # First Time Setup window, Box 2:
         
             self.box2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
             self.set_child(self.box2)
             
-            # Button 3 Label= 'Install Dependencies':
+    # Button 6 Label= 'Install Dependencies':
             
-            self.button3 = Gtk.Button(label="Install Dependencies")
-            self.box2.append(self.button3)
+            self.button6 = Gtk.Button(label="Install Dependencies")
+            self.box2.append(self.button6)
             
-            # Button 3, button size:
+    # Button 6, button size:
             
-            self.button3.set_margin_top(250)
-            self.button3.set_margin_bottom(20)
-            self.button3.set_margin_start(10)
-            self.button3.set_margin_end(10)
+            self.button6.set_margin_top(250)
+            self.button6.set_margin_bottom(20)
+            self.button6.set_margin_start(10)
+            self.button6.set_margin_end(10)
             
-            # Button 3, Function, ' Install_Dependencies ':       
+    # Button 6, Function, ' Install_Dependencies ':       
             
-            self.button3.connect('clicked', self.Install_Dependencies)
-            
-            
-            # Button 4 Label= 'Install Application':
-            
-            self.button4 = Gtk.Button(label="Install Application")
-            self.box2.append(self.button4)
-            
-            # Button 4, button size:
-            
-            self.button4.set_margin_top(10)
-            self.button4.set_margin_bottom(20)
-            self.button4.set_margin_start(10)
-            self.button4.set_margin_end(10)
-            
-            # Button 4, Function, ' Install_Application ':       
-            
-            self.button4.connect('clicked', self.Install_Application)
+            self.button6.connect('clicked', self.Install_Dependencies)
             
             
-    # Install Waydroid Window's Button's Definitions:
+    # Button 11 Label= 'Install Application':
+            
+            self.button11 = Gtk.Button(label="Install Application")
+            self.box2.append(self.button11)
+            
+    # Button 11, button size:
+            
+            self.button11.set_margin_top(10)
+            self.button11.set_margin_bottom(20)
+            self.button11.set_margin_start(10)
+            self.button11.set_margin_end(10)
+            
+    # Button 11, Function, ' Install_Application ':       
+            
+            self.button11.connect('clicked', self.Install_Application)
+            
+            
+            
+            
+            
+  # Install Waydroid Window's Button's Definitions:
         
-    # Button 2 def:
+  # Button 2, Main Application Window, Function = Open a new window.
         
     def Manage_Install(self, button):
         # create a second application window to be called by a button from the primary application window.
@@ -202,72 +205,57 @@ class MainWindow(Gtk.ApplicationWindow):
             self.box3 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
             self.set_child(self.box3)
             
-            # Button 5 Label= 'Purge Waydroid Installation':
+            
+            
+    # Button 7 Label= 'Purge Waydroid Installation':
         
-            self.button5 = Gtk.Button(label="Purge Waydroid Installation")
-            self.box3.append(self.button5)
-            
-            # Button 5, button size:
-            
-            self.button5.set_margin_top(230)
-            self.button5.set_margin_bottom(20)
-            self.button5.set_margin_start(10)
-            self.button5.set_margin_end(10)
-            
-            # Button 5, Function, ' Purge_Waydroid_Installation ':       
-            
-            self.button5.connect('clicked', self.Purge_Waydroid_Installation)
-            
-            # Button 6 Label= 'Purge Waydroid Images':
-    
-    
-            self.button6 = Gtk.Button(label="Purge Waydroid Images")
-            self.box3.append(self.button6)
-            
-            # Button 6, button size:
-            
-            self.button6.set_margin_top(10)
-            self.button6.set_margin_bottom(20)
-            self.button6.set_margin_start(10)
-            self.button6.set_margin_end(10)
-            
-            # Button 6, Function, ' Purge_Waydroid_Images ':       
-            
-            self.button6.connect('clicked', self.Purge_Waydroid_Images)
-            
-            # Button 7 Label= 'Install Waydroid':
-            
-            self.button7 = Gtk.Button(label="Install Waydroid")
+            self.button7 = Gtk.Button(label="Purge Waydroid Installation")
             self.box3.append(self.button7)
             
-            # Button 7, button size:
+    # Button 7, button size:
             
-            self.button7.set_margin_top(10)
+            self.button7.set_margin_top(250)
             self.button7.set_margin_bottom(20)
             self.button7.set_margin_start(10)
             self.button7.set_margin_end(10)
             
-            # Button 7, Function, ' Install_Waydroid ':       
+    # Button 7, Function, ' Purge_Waydroid_Installation ':       
             
-            self.button7.connect('clicked', self.Install_Waydroid)
+            self.button7.connect('clicked', self.Purge_Waydroid_Installation)
             
-            # Button 8 Label= 'Google Play Certification':
+            
+            
+    # Button 9 Label= 'Purge Waydroid Images':
     
-            self.button8 = Gtk.Button(label="Google Play Certification")
-            self.box3.append(self.button8)
-                    
-            # Button 8, button size:
+    
+            self.button9 = Gtk.Button(label="Purge Waydroid Images")
+            self.box3.append(self.button9)
             
-            self.button8.set_margin_top(10)
-            self.button8.set_margin_bottom(20)
-            self.button8.set_margin_start(10)
-            self.button8.set_margin_end(10)
             
-            # Button 8, Function, ' Get_Registration_Code ':       
+    # Button 9, button size:
             
-            self.button8.connect('clicked', self.Get_Registration_Code)
+            self.button9.set_margin_top(10)
+            self.button9.set_margin_bottom(20)
+            self.button9.set_margin_start(10)
+            self.button9.set_margin_end(10)
+            
+    # Button 9, Function, ' Purge_Waydroid_Images ':       
+            
+            self.button9.connect('clicked', self.Purge_Waydroid_Images)
+            
+            
+            
+            # Ninth button, second window, 'Install Waydroid'
+            
+            self.button9 = Gtk.Button(label="Install Waydroid")
+            self.box3.append(self.button9)
+            self.button9.set_margin_top(10)
+            self.button9.set_margin_bottom(20)
+            self.button9.set_margin_start(10)
+            self.button9.set_margin_end(10)
+            self.button9.connect('clicked', self.Install_Waydroid)
 
-    # main application window, popover menu, about window
+     # main application window, popover menu, about window
     def show_about(self, action, param):
        
         self.about = Gtk.AboutDialog()
@@ -279,14 +267,12 @@ class MainWindow(Gtk.ApplicationWindow):
         self.about.set_license_type(Gtk.License.GPL_3_0)
         self.about.set_website("https://github.com/MadameMalady/My-Waydroid-Manager")
         self.about.set_website_label("Github")
-        self.about.set_version("0.2.0")
+        self.about.set_version("0.1.9")
         self.about.set_logo_icon_name("app.Keo.MyWaydroidManager")  
 
-        self.about.set_visible(True)
-        
-
+        self.about.set_visible(True)       
+            
 #----------------------------------------------------------------------------------------------------------------------------------------
-           
            
     # This is where we will define what each button Does, and connect a function to each of them.
     
@@ -294,7 +280,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def Advanced_Options(self, button):
         print("here's some more text, developer.")
     
-    # Button 3 def:
+    #Button 6
     def Install_Dependencies(self, button):
         # Multiline bash code
         dependencies_bash = """
@@ -327,7 +313,8 @@ class MainWindow(Gtk.ApplicationWindow):
         ##os.system("cd scripts && ./dependencies.sh")
         #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "dependencies.sh")], check=True))
         
-    # Button 4 def:    
+        
+        
     def Install_Application(self,button):
         # Multiline bash code
         install_application_bash = """
@@ -403,7 +390,7 @@ class MainWindow(Gtk.ApplicationWindow):
         ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./install_application.sh")
         #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "install_application.sh")], check=True))
             
-    # Button 5 def:
+    #Button 7
     def Purge_Waydroid_Installation(self, button):
         # Multiline bash code
         purge_bash = """
@@ -437,7 +424,7 @@ class MainWindow(Gtk.ApplicationWindow):
         ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge.sh")
         #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge.sh")], check=True))
       
-    # Button 6 def:
+    #Button 9
     def Purge_Waydroid_Images(self, button):
         # Multiline bash code
         purge_images_bash = """
@@ -467,7 +454,7 @@ class MainWindow(Gtk.ApplicationWindow):
         ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./purge_images.sh")
         #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "purge_images.sh")], check=True))
         
-    #Button 7 def:
+    #Button 9
     def Install_Waydroid(self, button):
         # Multiline bash code
         build_bash = """
@@ -504,58 +491,11 @@ class MainWindow(Gtk.ApplicationWindow):
         #print("Installing Waydroid, please wait..")
         ##os.system(f"cd {os.path.join(self.current_dir, 'scripts')} && ./build.sh")
         #print(subprocess.run([os.path.join(self.current_dir, 'scripts', "build.sh")], check=True))
-
-    # Button 8 def:
-    def Get_Registration_Code(self, button):
-        # Multiline bash code
-        Retrieve_Registration_Code_bash = """
-        if [ $(hostname) = 'mobian' ]; then
-            notify-send "My Waydroid Manager" "Check Your Terminal"
-            read -p "You need to have ran Waydroid at least once and picked an image type to run this option, If you've not done so yet, please launch Waydroid"
-            echo ("Hit ctrl+c to cancel or, wait 3 seconds to continue")
-            sleep 3
-            touch Registration_Code.txt
-            sudo waydroid shell
-            ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA_ROOT=/apex/com.android.tzdata ANDROID_I18N_ROOT=/apex/com.android.i18n sqlite3 /data/data/com.google.android.gsf/databases/gservices.db "select * from main where name = \"android_id\";" > Registration_Code.txt
-            notify-send "My Waydroid Manager" "Done!"
-            echo "Done!"
-        elif [ $(hostname) = 'ubuntu' ]; then
-            notify-send "My Waydroid Manager" "Check Your Terminal"
-            read -p "You need to have ran Waydroid at least once and picked an image type to run this option, If you've not done so yet, please launch Waydroid"
-            echo ("Hit ctrl+c to cancel or, wait 3 seconds to continue")
-            sleep 3
-            touch Registration_Code.txt
-            sudo waydroid shell
-            ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA_ROOT=/apex/com.android.tzdata ANDROID_I18N_ROOT=/apex/com.android.i18n sqlite3 /data/data/com.google.android.gsf/databases/gservices.db "select * from main where name = \"android_id\";" > Registration_Code.txt
-            notify-send "My Waydroid Manager" "Done!"
-            echo "Done!"
-        elif [ $(hostname) = 'manjaro' ]; then
-            notify-send "My Waydroid Manager" "Check Your Terminal"
-            read -p "You need to have ran Waydroid at least once and picked an image type to run this option, If you've not done so yet, please launch Waydroid"
-            echo ("Hit ctrl+c to cancel or, wait 3 seconds to continue")
-            touch Registration_Code.txt
-            sudo waydroid shell
-            ANDROID_RUNTIME_ROOT=/apex/com.android.runtime ANDROID_DATA=/data ANDROID_TZDATA_ROOT=/apex/com.android.tzdata ANDROID_I18N_ROOT=/apex/com.android.i18n sqlite3 /data/data/com.google.android.gsf/databases/gservices.db "select * from main where name = \"android_id\";" > Registration_Code.txt
-            notify-send "My Waydroid Manager" "Done!"
-            echo "Done!"
-        elif [ $(hostname) = 'postmarketos*' ]; then
-            echo "Sorry, this option's still a work in progress"
-        else
-            echo "Error 404"
-        fi      
-        """
-        print("Installing Waydroid, please wait..")
-        subprocess.run(["bash", "-c", Retrieve_Registration_Code_bash], check=True)
-        ## run 'Retrieve_Registration_Code.sh' to write your registration code to a text file
-        #os.system("cd ~/MyWaydroidManager/scripts && ./Retrieve_Registration_Code.sh")
         
 
 #----------------------------------------------------------------------------------------------------------------------------------------
 
-
-    # This tells the app how to open Various Windows, And close them.
-
-    # def on activate:
+# This tells the app how to open Various Windows, And close them.
     
     def on_activate(self, app):
         self.win = FirstTimeSetupWindow(application=app)
@@ -574,13 +514,14 @@ class MainWindow(Gtk.ApplicationWindow):
     def on_destroy(self, widget):
         widget.destroy()
         
+            #Button 8
     def Go_Back(self, button):
         # Go back ot the previous Window
         print("going back!")
         self.win = MainWindow(application=app)
         self.win.present()
         
-# Init defs:
+# These lines tell the app what window to open when the app is launched
         
 class MyWaydroidManager(Adw.Application):
     def __init__(self, **kwargs):

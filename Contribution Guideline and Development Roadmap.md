@@ -13,12 +13,18 @@ General Guidelines:
        once I know enough to do so, and ditch the scripts entirely.
   - All GUI components need to be made with Gtk4, Libadwaita, and Python.
   - I am not a senior developer, please do not assume that I know everything.
+  - Please make sure that any changes made have some notes to explain what the function is and how it works,
+    this will A, Help me learn, and B, help others know how the code works better!
   
 
 Things to be fixed, Finished, or implimented:
 
 
   - A correct 'Back' Button that destroys the currently open window while opening the previous
+    
+  - Complete the 'Retrieve Registration Code' option to automate registering waydroid google play images
+    
+  - Support for camera passthrough **This is a long-term goal and will likely take time to figure out
 
   - A better 'About' Button using Adw.AboutWindow
     ** Help with this is appreciated!
