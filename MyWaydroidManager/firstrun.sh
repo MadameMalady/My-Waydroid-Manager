@@ -25,6 +25,6 @@ prompt_sudo_password
 echo "Successfully obtained root privilages"
 sudo chmod +x My_Waydroid_Manager.py
 cd scripts
-sudo chmod +x build.sh dependencies.sh install_application.sh purge.sh purge_images.sh
+sudo chmod +x build.sh dependencies.sh install_application.sh purge.sh purge_images.sh Retrieve_Registration_Code.sh
 cd ..
 ./My_Waydroid_Manager.py
