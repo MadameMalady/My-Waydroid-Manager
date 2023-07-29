@@ -379,7 +379,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 sleep 3
         fi      
         """
-        print("Installing Dependencies, please wait...")
+        print("This will install all the required files locally, in the future you may launch from the app's icon")
         subprocess.run(["bash", "-c", install_application_bash], check=True)
         ## install files locally as an application
         #print("This will install all the required files locally, in the future you may launch from the app's icon")
@@ -411,7 +411,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 sleep 3
         fi      
         """
-        print("Installing Dependencies, please wait...")
+        print("This will completely remove waydroid")
         subprocess.run(["bash", "-c", purge_bash], check=True)
         ## Purge Waydroid Installation
         #print("This will completely remove waydroid")
@@ -439,7 +439,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 sleep 3
         fi      
         """
-        print("Installing Dependencies, please wait...")
+        print("This will delete all waydroid images and directories")
         subprocess.run(["bash", "-c", purge_images_bash], check=True)
         ## Purge Waydroid Images
         #print("This will delete all waydroid images and directories")
@@ -473,7 +473,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 echo "Error 404"
         fi      
         """
-        print("Installing Dependencies, please wait...")
+        print("Installing Waydroid, please wait..")
         subprocess.run(["bash", "-c", build_bash], check=True)
         ## run 'build.sh' to try and build or install waydroid
         #print("Installing Waydroid, please wait..")

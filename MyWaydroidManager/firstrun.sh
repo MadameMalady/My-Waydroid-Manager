@@ -22,6 +22,7 @@ prompt_sudo_password() {
 
 echo "This operation will require your password:"
 prompt_sudo_password
+echo "success!"
 sudo chmod +x My_Waydroid_Manager.py
 cd scripts
 sudo chmod +x build.sh dependencies.sh install_application.sh purge.sh purge_images.sh
