@@ -288,14 +288,18 @@ class MainWindow(Gtk.ApplicationWindow):
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 sudo apt install libnotify-bin
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'ubuntu' ]; then
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 sudo apt install libnotify-bin
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'manjaro' ]; then
                 sudo pacman -Sy libnotify
+                notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'postmarketos*' ]; then
-                echo "to be filled" 
+                echo "to be implemented" 
         else
                 echo "Error 404"
                 sleep 3
@@ -332,7 +336,6 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
-                echo "
         [Desktop Entry]
         Version=0.1.9
         Name=My Waydroid Manager
@@ -343,6 +346,7 @@ class MainWindow(Gtk.ApplicationWindow):
         Terminal=true
         Type=Application">MyWaydroidManager.desktop
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'ubuntu' ]; then
                 
                 notify-send "My Waydroid Manager" "Check Your Terminal"
@@ -359,7 +363,6 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
-                echo "
         [Desktop Entry]
         Version=0.1.9
         Name=My Waydroid Manager
@@ -370,10 +373,11 @@ class MainWindow(Gtk.ApplicationWindow):
         Terminal=true
         Type=Application">MyWaydroidManager.desktop
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'manjaro' ]; then
-                echo "to be filled"
+                echo "to be implemented"
         elif [ $(hostname) = 'postmarketos*' ]; then
-                echo "to be filled" 
+                echo "to be implemented" 
         else
                 echo "Error 404"
                 sleep 3
@@ -396,16 +400,18 @@ class MainWindow(Gtk.ApplicationWindow):
                 sudo waydroid container stop
                 sudo apt remove waydroid -y
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'ubuntu' ]; then
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 waydroid session stop
                 sudo waydroid container stop
                 sudo apt remove waydroid -y
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'manjaro' ]; then
-                echo "to be filled"
+                echo "to be implemented"
         elif [ $(hostname) = 'postmarketos*' ]; then
-                echo "to be filled" 
+                echo "to be implemented" 
         else
                 echo "Error 404"
                 sleep 3
@@ -426,14 +432,16 @@ class MainWindow(Gtk.ApplicationWindow):
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'ubuntu' ]; then
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 sudo rm -rf /var/lib/waydroid /home/.waydroid ~/waydroid ~/.share/waydroid ~/.local/share/applications/*aydroid* ~/.local/share/waydroid
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'manjaro' ]; then
-                echo "to be filled"
+                echo "to be implemented"
         elif [ $(hostname) = 'postmarketos*' ]; then
-                echo "to be filled" 
+                echo "to be implemented" 
         else
                 echo "Error 404"
                 sleep 3
@@ -457,6 +465,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 sudo apt install waydroid -y
                 notify-send "My Waydroid Manager" "Launch Waydroid from it's application icon, minimize osk"
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'ubuntu' ]; then
                 notify-send "My Waydroid Manager" "Check Your Terminal"
                 sudo apt install curl ca-certificates -y
@@ -464,9 +473,12 @@ class MainWindow(Gtk.ApplicationWindow):
                 sudo apt install waydroid -y
                 notify-send "My Waydroid Manager" "Launch Waydroid from it's application icon, minimize osk"
                 notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'manjaro' ]; then
                 sudo pacman -Syyu waydroid
                 waydroid
+                notify-send "My Waydroid Manager" "Done!"
+                echo "Done!"
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "Sorry, this option's still a work in progress"
         else
