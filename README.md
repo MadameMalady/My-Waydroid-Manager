@@ -12,6 +12,7 @@ Ubuntu
 (**Manjaro** is a work in progress, and isn't fully implemented)
 
 **Do Not Ship**
+
   Flatpak builds are planned for release when the application is more feature-complete. 
   Official builds will be published by myself when ready,
   for other packaging formats, please open an 'Idea' in the Discussions tab.
