@@ -346,7 +346,6 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
                 sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
                 cd ..
-                cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
                 echo "
@@ -374,7 +373,6 @@ class MainWindow(Gtk.ApplicationWindow):
                 cp -p app.Keo.MyWaydroidManager.svg ~/.local/share/icons
                 sudo cp -p app.Keo.MyWaydroidManager.svg /usr/share/icons
                 cd ..
-                cp -r scripts /home/$user/MyWaydroidManager
                 cd  ~/.local/share/applications 
                 touch MyWaydroidManager.desktop
                 echo "
