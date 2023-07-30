@@ -26,7 +26,7 @@ How to download and use:
 
 **With Git Clone**:
 
-    git clone https://github.com/MadameMalady/My-Waydroid-Manager/tree/unstable
+    git clone https://github.com/MadameMalady/My-Waydroid-Manager.git -b Unstable
 
     cd My-Waydroid-Manager/MyWaydroidManager
 
