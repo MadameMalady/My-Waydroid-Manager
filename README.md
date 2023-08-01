@@ -18,27 +18,19 @@ Ubuntu
   for other packaging formats, please open an 'Idea' in the Discussions tab!
   I am only interested in Maintaining the Flatpak build long-tern, so if you'd like to volenteer
   to maintain other packaging formats, please do so when the Flatpak is shipped! 
-  (ie: when the main functions are all complete)!
-
+  (ie: when the main functions are all complete)
+  
 Currently the 'Retrieve Registration Code' option isn't fully finished, please be patient as it's worked on.
 
 How to download and use:
 
 **With Git Clone**:
 
-    git clone https://github.com/MadameMalady/My-Waydroid-Manager
+    git clone https://github.com/MadameMalady/My-Waydroid-Manager.git -b Unstable
 
-    cd 'My Waydroid Manager'/MyWaydroidManager
+    cd My-Waydroid-Manager/MyWaydroidManager
 
-    sudo chmod +x My_Waydroid_Manager.py
-
-    cd scripts
-
-    sudo chmod +x build.sh dependencies.sh install_application.sh purge.sh purge_images.sh
-
-    cd ..
-
-    ./My_Waydroid_Manager.py
+    ./firstrun.sh
 
 run First-time Setup
 
