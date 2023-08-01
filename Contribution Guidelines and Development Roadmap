@@ -12,6 +12,12 @@ General Guidelines:
 
 Things to be fixed, Finished, or implimented:
 
+    A 'Select Shared Folder' Button that pops up a directory selctor for easy setup
+
+    A 'Stop Waydroid' Button
+
+    A 'Restart Waydroid' Button
+
     A correct 'Back' Button that destroys the currently open window while opening the previous
 
     Complete the 'Retrieve Registration Code' option to automate registering waydroid google play images
