@@ -30,6 +30,8 @@ How to download and use:
 
     cd My-Waydroid-Manager/MyWaydroidManager
 
+    sudo chmod +x firstrun.sh
+
     ./firstrun.sh
 
 run First-time Setup
