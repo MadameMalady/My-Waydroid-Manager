@@ -11,6 +11,9 @@ Debian
 Ubuntu
 (**Manjaro** is a work in progress, and isn't fully implemented)
 
+If you encounter issues with installing, please temporarily rename your hostname to either 'ubuntu' or 'mobian' until 
+your install is finished. (I am working on a better way to id linux distros reliably!)
+
 **Please Do Not Ship**
 
   Flatpak builds are planned for release when the application is more feature-complete. 
