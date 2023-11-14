@@ -1,6 +1,6 @@
 #!/usr/bin/env python3                                                                            
 
-# v 0.2.1
+# v 0.2.2
 # © 2023 GPL 3.0
 
 
@@ -273,12 +273,12 @@ class MainWindow(Gtk.ApplicationWindow):
         self.about.set_transient_for(self)
         self.about.set_modal(self)
 
-        self.about.set_authors(["Kharra Oswin, RobetofLocksley"])
+        self.about.set_authors(["Kharra Oswin.     Contributors: RobetofLocksley"])
         self.about.set_copyright("© 2023 GPL 3.0")
         self.about.set_license_type(Gtk.License.GPL_3_0)
         self.about.set_website("https://github.com/MadameMalady/My-Waydroid-Manager")
         self.about.set_website_label("Github")
-        self.about.set_version("0.2.1")
+        self.about.set_version("0.2.2")
         self.about.set_logo_icon_name("app.Keo.MyWaydroidManager")  
 
         self.about.set_visible(True)
@@ -304,7 +304,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "to be implemented" 
         else
-                echo "Error 404"
+                echo "Error: unrecognized '$hostname' value :( "
                 sleep 3
         fi      
         """
@@ -337,7 +337,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 touch MyWaydroidManager.desktop
                 echo "
         [Desktop Entry]
-        Version=0.2.1
+        Version=0.2.2
         Name=My Waydroid Manager
         Comment=Manage Waydroid installations easily
         Exec=/usr/bin/env python3 /home/$user/MyWaydroidManager/My_Waydroid_Manager.py
@@ -367,7 +367,7 @@ class MainWindow(Gtk.ApplicationWindow):
                 touch MyWaydroidManager.desktop
                 echo "
         [Desktop Entry]
-        Version=0.2.1
+        Version=0.2.2
         Name=My Waydroid Manager
         Comment=Manage Waydroid installations easily
         Exec=/usr/bin/env python3 /home/$user/MyWaydroidManager/My_Waydroid_Manager.py
@@ -382,7 +382,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "to be implemented" 
         else
-                echo "Error 404"
+                echo "Error: unrecognized '$hostname' value :( "
                 sleep 3
         fi      
         """
@@ -412,7 +412,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "to be implemented" 
         else
-                echo "Error 404"
+                echo "Error: unrecognized '$hostname' value :( "
                 sleep 3
         fi      
         """
@@ -438,7 +438,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "to be implemented" 
         else
-                echo "Error 404"
+                echo "Error: unrecognized '$hostname' value :( "
                 sleep 3
         fi      
         """
@@ -473,7 +473,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
                 echo "Sorry, this option's still a work in progress"
         else
-                echo "Error 404"
+                echo "Error: unrecognized '$hostname' value :( "
         fi      
         """
         print("Installing Waydroid, please wait..")
@@ -515,7 +515,7 @@ class MainWindow(Gtk.ApplicationWindow):
         elif [ $(hostname) = 'postmarketos*' ]; then
             echo "Sorry, this option's still a work in progress"
         else
-            echo "Error 404"
+            echo "Error: unrecognized '$hostname' value :( "
         fi      
         """
         print("Installing Waydroid, please wait..")
