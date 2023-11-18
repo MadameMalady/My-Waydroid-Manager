@@ -1,6 +1,6 @@
 # My Waydroid Manager    
 
-My Waydroid Manager a work-in-progress application written in Python and Bash, using the Gtk4 and Libadwaita GUI frameworks
+My Waydroid Manager a work in progress Gtk4 application for installing and managing Waydroid installations.
 
 My Waydroid Manager is a WORK IN PROGRESS and comes with absolutely no guarantee of being compatible with your use-case.
 
