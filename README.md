@@ -1,4 +1,4 @@
-# This project is currently retired, feel free to make sontributions if you like, but the devs priorities are with other work currently 07/19/24
+# This project is currently retired, feel free to make contributions if you like, but the devs priorities are with other work currently 07/19/24
 
 # My Waydroid Manager    
 
