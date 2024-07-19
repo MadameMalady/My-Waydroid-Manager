@@ -1,3 +1,5 @@
+# This project is currently retired, feel free to make sontributions if you like, but the devs priorities are with other work currently 07/19/24
+
 # My Waydroid Manager    
 
 My Waydroid Manager a work in progress Gtk4 application for installing and managing Waydroid installations.
